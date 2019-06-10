@@ -1,0 +1,116 @@
+\section{Bài toán tối ưu tuổi thọ trong mạng cảm biến không dây}
+
+\begin{frame}
+    \frametitle{Mô hình bài toán}
+    \textbf{Đầu vào }
+\begin{itemize}
+    \item Không gian 3 chiều cần khảo sát với chiều dài và chiều rộng lần lượt là $W$ và $H$, chiều cao (sâu) vô hạn.
+    \item $S = \{s_1, s_2,…, s_n\}$: tập các nút cảm biến được triển khai, mỗi nút cảm biến $s_i$ có các thuộc tính:
+    \begin{itemize}
+        \item[] $(xs_i, ys_i)$: tọa độ trên mặt $Oxy$
+        \item[] $hs_i$: độ sâu so với mặt đất của cảm biến
+        \item[] $r$: bán kính truyền thông 
+        \item[] $l$: số bit mà nút cảm biến gửi tới trạm cơ sở
+    \end{itemize}
+    \item $F = \{f_1, f_2,…, f_m\}$: tập các vị trí khả thi để triển khai các nút chuyển tiếp, $f_i$ gồm các thuộc tính:
+    \begin{itemize}
+        \item[] $(xr_i, yr_i)$: tọa độ trên mặt $Oxy$
+        \item[] $hr_i$: độ cao so với mặt đất của cảm biến
+        \item[] $R$: bán kính truyền thông 
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mô hình bài toán}
+    \begin{itemize}
+        \item $D = \{d_{11}, d_{12},…, d_{nm}\}$: ma trận khoảng cách 
+    \begin{itemize}
+        \item[] $d_{ij}$: khoảng cách từ sensor $s_i$ đến relay $f_j$
+    \end{itemize}
+    \item $C = \{c_{11}, c_{12},…, c_{nm}\}$: ma trận kết nối
+    \begin{equation} 
+        c_{ij} = \begin{cases}
+            1 & \textrm{nếu $d_{ij} \leq r_i + R_j$}\\
+            0 & \textrm{nếu ngược lại}
+        \end{cases}
+        \label{eqn:simple_one} 
+    \end{equation}     
+    \begin{itemize}
+        \item[] Ý nghĩa: sensor $s_i$ có thể kết nối với relay $f_j$ nếu khoảng cách giữa hai nút không vượt quá tổng bán kính truyền thông của chúng
+    \end{itemize}
+    \item Năng lượng tiêu hao khi truyền $l$ bits dữ liệu từ sensor $s_i$ đến relay triển khai tại $f_j$
+    \begin{equation}
+        Et_{ij} = l * (E_{TX} + e_{fs} * d_{ij}^2)
+        \label{sensor_consumption}
+    \end{equation}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mô hình bài toán}
+    \begin{itemize}
+        \item Năng lượng tiêu hao của relay triển khai tại $f_j$ nhận dữ liệu từ $x_j$ sensors, tổng hợp và gửi tới trạm cơ sở
+    \begin{equation}
+        Er_j = l * (x_j * E_{RX} + x_j * E_{DA} + e_{mp} * d_{jtoBS}^4)
+        \label{relay_consumption}
+    \end{equation}
+    \item $E_{max}$: năng lượng tiêu thụ tối đa mà một nút trong mạng có thể đạt đến
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mô hình bài toán}
+\textbf{Đầu ra }
+\begin{itemize}
+    \item $z = (z_1, z_2,…, z_m)$: vector quyết định
+    \begin{equation}
+        z_j = \begin{cases}
+            1 & \textrm{nếu có relay triển khai tại $f_j$}\\
+            0 & \textrm{nếu ngược lại}
+        \end{cases}
+    \end{equation}
+    \item $A = \{a_{11}, a_{12},…, a_{nm}\}$: ma trận quyết định
+    \begin{equation}
+        a_{ij} = \begin{cases}
+            1 & \textrm{nếu $s_i$ kết nối tới $f_j$}\\
+            0 & \textrm{nếu ngược lại}
+        \end{cases}
+    \end{equation}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mô hình bài toán}
+\textbf{Ràng buộc }
+
+\begin{equation}
+    \sum_{j = 0}^m a_{ij} = 1 ~\forall i = 0, 1, \ldots, n: \textrm{mỗi sensor chỉ kết nối tới 1 relay}
+\end{equation}
+\begin{equation}
+    z_j = a_{1j} \wedge a_{2j} \wedge \ldots \wedge a_{nj} ~\forall j = 1, 2, \ldots, m
+\end{equation}
+
+\textbf{Hàm mục tiêu }
+
+\begin{equation}
+    \frac{\alpha}{m} * \sum_{j = 1}^m z_j + \frac{1 - \alpha}{E_{max}} * E_x \rightarrow min
+    \label{obj_func}
+\end{equation}
+
+Trong đó:
+\begin{itemize}
+    \item $E_x$ là năng lượng tiêu  hao lớn nhất của một nút trong lời giải. 
+    \item $0 \leq \alpha \leq 1$: trọng số đánh giá độ quan trọng của số nút chuyển tiếp được sử dụng.
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Hướng tiếp cận}
+    \begin{itemize}
+        \item Vét cạn 
+        \item Các giải thuật xấp xỉ
+    \end{itemize}
+\end{frame}
