@@ -88,16 +88,21 @@
 \usepackage{mathtools}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
-\AtBeginSection[]{
-  \begin{frame}
-  \vfill
-  \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
-  \end{beamercolorbox}
-  \vfill
-  \end{frame}
-}
+% \AtBeginSection[]{
+%   \begin{frame}
+%   \vfill
+%   \centering
+%   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+%     \usebeamerfont{title}\insertsectionhead\par%
+%   \end{beamercolorbox}
+%   \vfill
+%   \end{frame}
+% }
+
+% \begin{frame}[noframenumbering]
+%   \frametitle{Content}
+%   \tableofcontents[currentsection]
+% \end{frame}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -117,21 +122,22 @@ Hanoi University of Sciences and Technology \\ % Your institution for the title 
 % --------------------------------------
 \begin{document}
 
-\begin{frame}
-\titlepage % Print the title page as the first slide
-\end{frame}
+% \begin{frame}
+% \titlepage % Print the title page as the first slide
+% \end{frame}
 
+\include{files/first_slide}
 \begin{frame}
 \frametitle{Nội dung trình bày} % Table of contents slide, comment this block out to remove it
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
 
 
-\include{files/tong_quan}
-\include{files/bai_toan_toi_uu_tuoi_tho}
-\include{files/cac_giai_thuat_de_xuat}
+% \include{files/tong_quan}
+% \include{files/bai_toan_toi_uu_tuoi_tho}
+% \include{files/cac_giai_thuat_de_xuat}
 \include{files/ket_qua_thuc_nghiem}
-\include{files/ket_luan}
+% \include{files/ket_luan}
 
 
 

@@ -1,10 +1,32 @@
 \section{Các giải thuật đề xuất giải bài toán tối ưu tuổi thọ mạng cảm biến không dây}
+\begin{frame}[noframenumbering]
+  \frametitle{Nội dung trình bày}
+  \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ý tưởng}
+    Giải bài toán theo 2 pha:
+    \begin{itemize}
+        \item Chọn ra các vị trí đặt nút chuyển tiếp.
+        \item Tạo kết nối giữa nút cảm biến và nút chuyển tiếp.
+    \end{itemize}
+\end{frame}
+
 \subsection{Giải thuật di truyền}
 \begin{frame}
     \frametitle{Giải thuật di truyền}
     \textbf{Mã hóa cá thể}
-    
-    Sử dụng mã hóa nhị phân 
+    \begin{itemize}
+        \item Sử dụng mã hóa nhị phân 
+        \item $k = (k_1, k_2,…, k_m)$
+        \item[] \begin{equation*}
+            k_j = \begin{cases}
+                1 & \textrm{nếu có relay triển khai tại $f_j$}\\
+                0 & \textrm{nếu ngược lại}
+            \end{cases}
+        \end{equation*}
+    \end{itemize} 
     
     Ví dụ: một cá thể với 10 vị trí khả thi đặt relay
 
@@ -181,57 +203,57 @@
     \textbf{Lượng giá lời giải}
 
     \begin{itemize}
-        \item Sắp xếp tập các kết nối $E = \{e_1, e_2,…, e_k\}$ trong mạng theo thứ tự không giảm bằng sắp xếp trộn (merge sort), tập các kết nối đã được sắp xếp $E’ = \{e'_1, e'_2,…, e'_k\}$.
+        \item Sắp xếp tập các kết nối $E = \{e_1, e_2,…, e_k\}$ trong mạng theo thứ tự không giảm, tập các kết nối đã được sắp xếp $E’ = \{e'_1, e'_2,…, e'_k\}$.
         \item Tìm ra kết nối có chỉ  số nhỏ nhất $e'_i ~(1 \leq i \leq k)$ sao cho với các kết nối $e'_1, e'_2, …, e'_i$ ta giải được bài toán luồng cực đại trong mạng, việc tìm ra kết nối này dựa trên ý tưởng của tìm kiếm nhị phân.
     \end{itemize}
 \end{frame}
 
 
+% Ma gia thuat toan, tam thoi bo 
+% \begin{frame}
+%     \fontsize{9pt}{10pt}\selectfont
+%     \frametitle{Phương pháp tìm kiếm cục bộ}
 
-\begin{frame}
-    \fontsize{9pt}{10pt}\selectfont
-    \frametitle{Phương pháp tìm kiếm cục bộ}
-
-    \begin{algorithm}[H]
-        \SetKwData{START}{start}
-        \SetKwData{MID}{mid}
-        \SetKwData{END}{end}
-        \SetKwData{Up}{up}
-        \SetKwData{Energy}{E'}
-        \SetKwData{ivar}{i}
-        \SetKwData{jvar}{j}
-        \SetKwData{TRUE}{True}
-        \SetKwData{FALSE}{False}
-        \SetKwData{varlone}{$l_1$}
-        \SetKwData{varltwo}{$l_2$}
-        \SetKwData{varlthree}{$l_3$}
-        \SetKwFunction{MaxFlow}{MaxFlow}
-        \SetKwFunction{FindConnect}{FindConnect}
-        \SetKwInOut{Input}{Đầu vào}
-        \SetKwInOut{Output}{Đầu ra}
-        % \Input{\\ \Energy : tập các kết nối đã được sắp xếp \\ \ivar và \jvar: chỉ số  bắt đầu và chỉ số kết thúc \\ Năng lượng tiêu hao của các kết nối trong mạng}
-        % \Output{\\Các kết nối được chọn}
-            \SetAlgoLined
-            \BlankLine
-            \Begin{
-                $\START \leftarrow \ivar$\\
-                $\END \leftarrow \jvar$\\
-                $\MID \leftarrow \floor{(\START + \END)/2}$\\
-                $\varlone \leftarrow \MaxFlow (e'_1, ..., e'_{start})$\\
-                $\varltwo \leftarrow \MaxFlow (e'_1, ..., e'_{mid})$\\
-                $\varlthree \leftarrow \MaxFlow (e'_1, ..., e'_{end})$\\
-                \If{\varlone is \TRUE} {
-                return $\{e'_1, ..., e'_{start}\}$
-                }\If{\varlthree is \FALSE} {
-                return \FALSE
-                }
-                \eIf{\varltwo is \FALSE} {
-                    return \FindConnect ($E', mid, end$)
-                }{
-                    return \FindConnect ($E', start, mid$)
-                }
-                \DecMargin{1em}
-            }
-            \caption{FindConnect ($E', i, j$)}      
-    \end{algorithm}
-\end{frame}
+%     \begin{algorithm}[H]
+%         \SetKwData{START}{start}
+%         \SetKwData{MID}{mid}
+%         \SetKwData{END}{end}
+%         \SetKwData{Up}{up}
+%         \SetKwData{Energy}{E'}
+%         \SetKwData{ivar}{i}
+%         \SetKwData{jvar}{j}
+%         \SetKwData{TRUE}{True}
+%         \SetKwData{FALSE}{False}
+%         \SetKwData{varlone}{$l_1$}
+%         \SetKwData{varltwo}{$l_2$}
+%         \SetKwData{varlthree}{$l_3$}
+%         \SetKwFunction{MaxFlow}{MaxFlow}
+%         \SetKwFunction{FindConnect}{FindConnect}
+%         \SetKwInOut{Input}{Đầu vào}
+%         \SetKwInOut{Output}{Đầu ra}
+%         % \Input{\\ \Energy : tập các kết nối đã được sắp xếp \\ \ivar và \jvar: chỉ số  bắt đầu và chỉ số kết thúc \\ Năng lượng tiêu hao của các kết nối trong mạng}
+%         % \Output{\\Các kết nối được chọn}
+%             \SetAlgoLined
+%             \BlankLine
+%             \Begin{
+%                 $\START \leftarrow \ivar$\\
+%                 $\END \leftarrow \jvar$\\
+%                 $\MID \leftarrow \floor{(\START + \END)/2}$\\
+%                 $\varlone \leftarrow \MaxFlow (e'_1, ..., e'_{start})$\\
+%                 $\varltwo \leftarrow \MaxFlow (e'_1, ..., e'_{mid})$\\
+%                 $\varlthree \leftarrow \MaxFlow (e'_1, ..., e'_{end})$\\
+%                 \If{\varlone is \TRUE} {
+%                 return $\{e'_1, ..., e'_{start}\}$
+%                 }\If{\varlthree is \FALSE} {
+%                 return \FALSE
+%                 }
+%                 \eIf{\varltwo is \FALSE} {
+%                     return \FindConnect ($E', mid, end$)
+%                 }{
+%                     return \FindConnect ($E', start, mid$)
+%                 }
+%                 \DecMargin{1em}
+%             }
+%             \caption{FindConnect ($E', i, j$)}      
+%     \end{algorithm}
+% \end{frame}

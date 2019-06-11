@@ -1,24 +1,37 @@
-\section{Bài toán tối ưu tuổi thọ trong mạng cảm biến không dây}
+\section{Bài toán tối ưu tuổi thọ trong mạng cảm biến không dây ngầm}
+\begin{frame}[noframenumbering]
+    \frametitle{Nội dung trình bày}
+    \tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}
+    \frametitle{Định nghĩa tuổi thọ}
+    \begin{itemize}
+        \item Tuổi thọ của mạng bắt đầu từ khi hoạt động cho đến khi có một nút ngừng hoạt động.
+        \item Kí hiệu: $T_n^n = \min_{v \in V} T_v$
+        \item[] Trong đó $T_v$ là thời gian sống của nút $v$.
+    \end{itemize}
+\end{frame}
 
 \begin{frame}
     \frametitle{Mô hình bài toán}
     \textbf{Đầu vào }
-\begin{itemize}
-    \item Không gian 3 chiều cần khảo sát với chiều dài và chiều rộng lần lượt là $W$ và $H$, chiều cao (sâu) vô hạn.
-    \item $S = \{s_1, s_2,…, s_n\}$: tập các nút cảm biến được triển khai, mỗi nút cảm biến $s_i$ có các thuộc tính:
     \begin{itemize}
-        \item[] $(xs_i, ys_i)$: tọa độ trên mặt $Oxy$
-        \item[] $hs_i$: độ sâu so với mặt đất của cảm biến
-        \item[] $r$: bán kính truyền thông 
-        \item[] $l$: số bit mà nút cảm biến gửi tới trạm cơ sở
+        \item Không gian 3 chiều cần khảo sát với chiều dài và chiều rộng lần lượt là $W$ và $H$, chiều cao (sâu) vô hạn.
+        \item $S = \{s_1, s_2,…, s_n\}$: tập các nút cảm biến được triển khai, mỗi nút cảm biến $s_i$ có các thuộc tính:
+        \begin{itemize}
+            \item[] $(xs_i, ys_i)$: tọa độ trên mặt $Oxy$
+            \item[] $hs_i$: độ cao so với mực nước biển
+            \item[] $r$: bán kính truyền thông 
+            \item[] $l$: số bit mà nút cảm biến gửi tới trạm cơ sở
+        \end{itemize}
+        \item $F = \{f_1, f_2,…, f_m\}$: tập các vị trí khả thi để triển khai các nút chuyển tiếp, $f_i$ gồm các thuộc tính:
+        \begin{itemize}
+            \item[] $(xr_i, yr_i)$: tọa độ trên mặt $Oxy$
+            \item[] $hr_i$: độ cao so với mực nước biển
+            \item[] $R$: bán kính truyền thông 
+        \end{itemize}
     \end{itemize}
-    \item $F = \{f_1, f_2,…, f_m\}$: tập các vị trí khả thi để triển khai các nút chuyển tiếp, $f_i$ gồm các thuộc tính:
-    \begin{itemize}
-        \item[] $(xr_i, yr_i)$: tọa độ trên mặt $Oxy$
-        \item[] $hr_i$: độ cao so với mặt đất của cảm biến
-        \item[] $R$: bán kính truyền thông 
-    \end{itemize}
-\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -89,7 +102,7 @@
     \sum_{j = 0}^m a_{ij} = 1 ~\forall i = 0, 1, \ldots, n: \textrm{mỗi sensor chỉ kết nối tới 1 relay}
 \end{equation}
 \begin{equation}
-    z_j = a_{1j} \wedge a_{2j} \wedge \ldots \wedge a_{nj} ~\forall j = 1, 2, \ldots, m
+    z_j = a_{1j} \lor a_{2j} \lor \ldots \lor a_{nj} ~\forall j = 1, 2, \ldots, m
 \end{equation}
 
 \textbf{Hàm mục tiêu }
@@ -110,7 +123,7 @@ Trong đó:
 \begin{frame}
     \frametitle{Hướng tiếp cận}
     \begin{itemize}
-        \item Vét cạn 
-        \item Các giải thuật xấp xỉ
+        \item Giải thuật chính xác.
+        \item Các giải thuật xấp xỉ.
     \end{itemize}
 \end{frame}

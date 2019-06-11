@@ -1,5 +1,8 @@
 \section{Kết quả thực nghiệm}
-
+\begin{frame}[noframenumbering]
+    \frametitle{Nội dung trình bày}
+    \tableofcontents[currentsection]
+  \end{frame}
 \begin{frame}
     \frametitle{Dữ liệu thực nghiệm}
     Trích xuất từ một số khu vực thực tế
@@ -8,11 +11,11 @@
         \begin{tabularx}{\textwidth}{|l|l|X|}
             \hline
             \multicolumn{1}{|c|}{\textbf{Dữ liệu}} & \multicolumn{1}{c|}{\textbf{Khu vực thực tế}} & \multicolumn{1}{c|}{\textbf{Mô tả}}                                                                 \\ \hline
-            dem1 & Vũng Tàu                             & Thành phố nhiều tòa nhà với độ cao cân đối, có đồi núi, và một vùng biển nằm về một hướng  \\ \hline
-            dem3 & TP. HCM                           & Đồng bằng nhiều nhà cao tầng, ít sông                            \\ \hline
-            dem4 & Vĩnh Long                            & Ít nhà cửa, không đồi núi, kênh rạch nhiều đặc biệt có dòng sông lớn mekong                \\ \hline
-            dem5 & Lâm Đồng                             & Vùng đồi núi nhiều, ít nhà cửa, có núi cao, có sông xen kẽ                                \\ \hline
-            dem6 & Cao Nguyên                           & Vùng có nhiều đồi núi có độ cao tăng dần, ít nhà cửa, không sông hồ                        \\ \hline
+            T1 & Vũng Tàu                             & Thành phố nhiều tòa nhà với độ cao cân đối, có đồi núi, và một vùng biển nằm về một hướng  \\ \hline
+            T2 & TP. HCM                           & Đồng bằng nhiều nhà cao tầng, ít sông                            \\ \hline
+            T3 & Vĩnh Long                            & Ít nhà cửa, không đồi núi, kênh rạch nhiều đặc biệt có dòng sông lớn mekong                \\ \hline
+            T4 & Lâm Đồng                             & Vùng đồi núi nhiều, ít nhà cửa, có núi cao, có sông xen kẽ                                \\ \hline
+            T5 & Cao Nguyên                           & Vùng có nhiều đồi núi có độ cao tăng dần, ít nhà cửa, không sông hồ                        \\ \hline
             % dem7 & Đà Nẵng                              & Vùng ít nhà cửa, núi cao tiếp giáp vùng biển, vùng biển chủ yếu                            \\ \hline
             % dem8 & Hà Nội                               & Vùng nhiều nhà cao , có ao hồ                                                              \\ \hline
             % dem9 & Hạ Long                              & Vùng biển có nhiều đảo nhỏ độ cao khác nhau, không có nhà                                  \\ \hline
@@ -21,6 +24,15 @@
         \caption{Mô tả địa hình thực nghiệm}
     \end{table}
 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Dữ liệu thực nghiệm}
+
+    \begin{figure}
+        \includegraphics[width=\linewidth]{picture/Selection_038.png}
+        \caption{Khu vực T4}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -79,9 +91,27 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Nghiệm lại hàm mục tiêu}
+    \frametitle{So sánh kết quả}
+    \begin{figure}[h!]
+        \centering
+        \subfigure{\fbox{\includegraphics[width=0.4\linewidth]{picture/res_cp_25.png}}}
+        \hspace{1cm}
+        \subfigure{\fbox{\includegraphics[width=0.4\linewidth]{picture/res_cp_30.png}}}
+        \subfigure{\fbox{\includegraphics[width=0.4\linewidth]{picture/res_cp_45.png}}}
+        \hspace{1cm}
+        \subfigure{\fbox{\includegraphics[width=0.4\linewidth]{picture/res_cp_50.png}}}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Kết quả}
+    \frametitle{So sánh thời gian}
+    \begin{figure}[h!]
+        \centering
+        \subfigure{\fbox{\includegraphics[width=0.4\linewidth]{picture/time_cp_25.png}}}
+        \hspace{1cm}
+        \subfigure{\fbox{\includegraphics[width=0.4\linewidth]{picture/time_cp_30.png}}}
+        \subfigure{\fbox{\includegraphics[width=0.4\linewidth]{picture/time_cp_45.png}}}
+        \hspace{1cm}
+        \subfigure{\fbox{\includegraphics[width=0.4\linewidth]{picture/time_cp_50.png}}}
+    \end{figure}
 \end{frame}
