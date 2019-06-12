@@ -38,26 +38,30 @@
     \frametitle{Mô hình bài toán}
     \begin{itemize}
         \item $D = \{d_{11}, d_{12},…, d_{nm}\}$: ma trận khoảng cách 
-    \begin{itemize}
-        \item[] $d_{ij}$: khoảng cách từ sensor $s_i$ đến relay $f_j$
+        \begin{itemize}
+            \item[] $d_{ij}$: khoảng cách từ sensor $s_i$ đến relay $f_j$
+        \end{itemize}
+        \item $C = \{c_{11}, c_{12},…, c_{nm}\}$: ma trận kết nối
+        \begin{equation} 
+            c_{ij} = \begin{cases}
+                1 & \textrm{nếu $d_{ij} \leq r_i + R_j$}\\
+                0 & \textrm{nếu ngược lại}
+            \end{cases}
+            \label{eqn:simple_one} 
+        \end{equation}     
+        \begin{itemize}
+            \item[] Ý nghĩa: sensor $s_i$ có thể kết nối với relay $f_j$ nếu khoảng cách giữa hai nút không vượt quá tổng bán kính truyền thông của chúng
+        \end{itemize}
+        \item Năng lượng tiêu hao khi truyền $l$ bits dữ liệu từ sensor $s_i$ đến relay triển khai tại $f_j$
+        \begin{equation}
+            Et_{ij} = l * (E_{TX} + e_{fs} * d_{ij}^2) 
+            \label{sensor_consumption}
+            \footnote{W. R. Heinzelman, A. Chandrakasan, H. Balakrishnan, Energy-efficient communication protocol for
+            wireless microsensor networks, in: Proceedings of the 33rd annual Hawaii international conference on
+            system sciences, IEEE, 2000.}
+        \end{equation} 
     \end{itemize}
-    \item $C = \{c_{11}, c_{12},…, c_{nm}\}$: ma trận kết nối
-    \begin{equation} 
-        c_{ij} = \begin{cases}
-            1 & \textrm{nếu $d_{ij} \leq r_i + R_j$}\\
-            0 & \textrm{nếu ngược lại}
-        \end{cases}
-        \label{eqn:simple_one} 
-    \end{equation}     
-    \begin{itemize}
-        \item[] Ý nghĩa: sensor $s_i$ có thể kết nối với relay $f_j$ nếu khoảng cách giữa hai nút không vượt quá tổng bán kính truyền thông của chúng
-    \end{itemize}
-    \item Năng lượng tiêu hao khi truyền $l$ bits dữ liệu từ sensor $s_i$ đến relay triển khai tại $f_j$
-    \begin{equation}
-        Et_{ij} = l * (E_{TX} + e_{fs} * d_{ij}^2)
-        \label{sensor_consumption}
-    \end{equation}
-    \end{itemize}
+    
 \end{frame}
 
 \begin{frame}
@@ -67,6 +71,9 @@
     \begin{equation}
         Er_j = l * (x_j * E_{RX} + x_j * E_{DA} + e_{mp} * d_{jtoBS}^4)
         \label{relay_consumption}
+        \footnote{W. R. Heinzelman, A. Chandrakasan, H. Balakrishnan, Energy-efficient communication protocol for
+            wireless microsensor networks, in: Proceedings of the 33rd annual Hawaii international conference on
+            system sciences, IEEE, 2000.}
     \end{equation}
     \item $E_{max}$: năng lượng tiêu thụ tối đa mà một nút trong mạng có thể đạt đến
     \end{itemize}
