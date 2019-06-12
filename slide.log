@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.5.7)  12 JUN 2019 15:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.5.7)  12 JUN 2019 16:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1664,10 +1664,10 @@ LaTeX Warning: Command \textellipsis invalid in math mode on input line 65.
 
 ]
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 102.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 103.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 102.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 103.
 
 [14
 
@@ -2076,7 +2076,7 @@ Here is how much of TeX's memory you used:
  286 hyphenation exceptions out of 8191
  48i,29n,65p,841b,672s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb>
-Output written on /media/manh/Data/CNTT/Nam_5/Final_project/FinalProjectSlide/slide.pdf (40 pages, 4803829 bytes).
+Output written on /media/manh/Data/CNTT/Nam_5/Final_project/FinalProjectSlide/slide.pdf (40 pages, 4803832 bytes).
 PDF statistics:
  1312 PDF objects out of 1440 (max. 8388607)
  1181 compressed objects within 12 object streams
